@@ -1,16 +1,12 @@
 import React from 'react';
 
 export const Select = ({ value, onValueChange, children }) => (
-  <div>
-    <select value={value} onChange={(e) => onValueChange(e.target.value)}>
-      {children}
-    </select>
-  </div>
+  <select value={value} onChange={(e) => onValueChange(e.target.value)}>
+    {children}
+  </select>
 );
 
-export const SelectTrigger = ({ children, className }) => (
-  <div className={className}>{children}</div>
-);
+export const SelectTrigger = ({ children }) => <>{children}</>;
 
 export const SelectValue = ({ placeholder }) => (
   <option value="" disabled>
