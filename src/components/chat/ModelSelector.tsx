@@ -32,7 +32,7 @@ export function ModelSelector({
         <SelectTrigger className="w-[200px]">
           <SelectValue placeholder="Select a model" />
         </SelectTrigger>
-        {isClient && <ChevronDown className="ml-2 h-4 w-4" />}
+        <ChevronDown className="ml-2 h-4 w-4" />
       </div>
       <SelectContent>
         {models.map((model) => (
