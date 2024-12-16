@@ -26,8 +26,8 @@ export function ModelSelector({
     <Select value={selectedModel} onValueChange={onModelChange}>
       <SelectTrigger className="w-[200px]">
         <SelectValue placeholder="Select a model" />
-        <ChevronDown className="ml-2 h-4 w-4" />
       </SelectTrigger>
+      <ChevronDown className="ml-2 h-4 w-4" />
       <SelectContent>
         {models.map((model) => (
           <SelectItem key={model.id} value={model.id}>
