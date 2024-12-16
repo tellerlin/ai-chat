@@ -1,14 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { AIModel } from '@/types/chat';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ChevronDown } from 'lucide-react';
 
 interface ModelSelectorProps {
@@ -23,13 +16,18 @@ export function ModelSelector({
   onModelChange,
 }: ModelSelectorProps) {
   const [isClient, setIsClient] = useState(false);
+  const [localSelectedModel, setLocalSelectedModel] = useState(selectedModel || models[0].id);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
+  useEffect(() => {
+    setLocalSelectedModel(selectedModel || models[0].id);
+  }, [selectedModel, models]);
+
   return (
-    <Select value={selectedModel} onValueChange={onModelChange}>
+    <Select value={localSelectedModel} onValueChange={onModelChange}>
       <div className="flex items-center">
         <SelectTrigger className="w-[200px] flex items-center">
           <SelectValue placeholder="Select a model" />
