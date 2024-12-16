@@ -28,10 +28,12 @@ export function ModelSelector({
 
   return (
     <Select value={selectedModel} onValueChange={onModelChange}>
-      <SelectTrigger className="w-[200px]">
-        <SelectValue placeholder="Select a model" />
+      <div className="flex items-center">
+        <SelectTrigger className="w-[200px]">
+          <SelectValue placeholder="Select a model" />
+        </SelectTrigger>
         {isClient && <ChevronDown className="ml-2 h-4 w-4" />}
-      </SelectTrigger>
+      </div>
       <SelectContent>
         {models.map((model) => (
           <SelectItem key={model.id} value={model.id}>
