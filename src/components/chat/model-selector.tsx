@@ -31,12 +31,10 @@ export function ModelSelector({
   return (
     <Select value={selectedModel} onValueChange={onModelChange}>
       <div className="flex items-center">
-        <SelectTrigger className="w-[200px]">
+        <SelectTrigger className="w-[200px] flex items-center">
           <SelectValue placeholder="Select a model" />
+          {isClient && <ChevronDown className="ml-2 h-4 w-4" />}
         </SelectTrigger>
-        <span className="ml-2 h-4 w-4">
-          {isClient && <ChevronDown className="h-4 w-4" />}
-        </span>
       </div>
       <SelectContent>
         {models.map((model) => (
