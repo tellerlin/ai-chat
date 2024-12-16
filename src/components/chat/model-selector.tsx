@@ -8,7 +8,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from 'shadcn-ui';
+import { ChevronDown } from 'lucide-react';
 
 interface ModelSelectorProps {
   models: AIModel[];
@@ -25,6 +26,7 @@ export function ModelSelector({
     <Select value={selectedModel} onValueChange={onModelChange}>
       <SelectTrigger className="w-[200px]">
         <SelectValue placeholder="Select a model" />
+        <ChevronDown className="ml-2 h-4 w-4" />
       </SelectTrigger>
       <SelectContent>
         {models.map((model) => (
