@@ -8,7 +8,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from 'shadcn-ui';
+} from '@/components/ui/select';
 import { ChevronDown } from 'lucide-react';
 
 interface ModelSelectorProps {
